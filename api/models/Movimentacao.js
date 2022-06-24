@@ -5,17 +5,25 @@ const conection = require ('../banco/conection')
 
 const Movimentacao = conection.define('Movimentacao',{
   
-  id_estoque:{
+  data:{
+    type: DataTypes.DATE,
+  },
+
+  nota_fiscal:{
+    type: DataTypes.STRING,
+  },
+
+  valor:{
     type: DataTypes.NUMBER,
   },
 
-  id_entrada:{
-    type: DataTypes.NUMBER,
+  tipo_movimentacao:{
+    type: DataTypes.STRING,
   },
 
-  id_saida:{
-    type: DataTypes.NUMBER,
-  }
+  cod_transacao:{
+    type: DataTypes.STRING,
+  },
 })
 
 module.exports = Movimentacao

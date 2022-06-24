@@ -28,15 +28,19 @@ class MovimentacaoController {
         // Testes no Postamn ELSE.
         if(JSON.stringify(req.body) != JSON.stringify({})){
             novoMovimentacao = {
-                id_produto: req.body.id_produto,
-                tipo: req.body.tipo,
-                valor: req.body.valor
+                data: req.body.data,
+                nota_fiscal: req.body.nota_fiscal,
+                valor: req.body.valor,
+                tipo_movimentacao: req.body.tipo_movimentacao,
+                cod_transacao: req.body.cod_transacao,
             }
         }else{
             novoMovimentacao = {
-                id_produto: req.query.id_produto,
-                tipo: req.query.tipo,
-                valor: req.query.valor
+                data: req.query.data,
+                nota_fiscal: req.query.nota_fiscal,
+                valor: req.query.valor,
+                tipo_movimentacao: req.query.tipo_movimentacao,
+                cod_transacao: req.query.cod_transacao,
             }
         }
         try {
