@@ -1,9 +1,9 @@
-const database = require('../models/User')
+const database = require('../models/user')
 
 class UserController {
     static async pegaTodosUsers(req, res){
         try {        
-                const todosUsers = await database.User.findAll()
+                const todosUsers = await database.findAll()
                 return res.status(200).json(todosUsers)
             
         } catch(error){

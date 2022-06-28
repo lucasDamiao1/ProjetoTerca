@@ -3,7 +3,7 @@ const database = require('../models/FluxoDeCaixa')
 class FluxoDeCaixaController {
     static async pegaTodosFluxoDeCaixa(req, res){
         try {        
-                const todosFluxoDeCaixa = await database.FluxoDeCaixa.findAll()
+                const todosFluxoDeCaixa = await database.findAll()
                 return res.status(200).json(todosFluxoDeCaixa)
             
         } catch(error){

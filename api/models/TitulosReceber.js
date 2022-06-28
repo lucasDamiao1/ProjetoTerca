@@ -3,7 +3,7 @@ const {DataTypes} = require ('sequelize')
 
 const conection = require ('../banco/conection')
 
-const TitulosReceber = conection.define('Entrada',{
+const TitulosReceber = conection.define('TitulosReceber',{
   
   Data:{
     type: DataTypes.DATE,
@@ -30,4 +30,4 @@ const TitulosReceber = conection.define('Entrada',{
   }
 })
 
-module.exports = Entrada
+module.exports = TitulosReceber

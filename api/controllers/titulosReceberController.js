@@ -3,7 +3,7 @@ const database = require('../models/TitulosReceber')
 class TitulosReceberController {
     static async pegaTodosTitulosReceber(req, res){
         try {        
-                const todosTitulosReceber = await database.TitulosReceber.findAll()
+                const todosTitulosReceber = await database.findAll()
                 return res.status(200).json(todosTitulosReceber)
             
         } catch(error){

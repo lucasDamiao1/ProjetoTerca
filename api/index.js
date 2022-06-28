@@ -13,6 +13,10 @@ const User = require ('./models/User')
 
 //routes
 const userRoutes = require ('./routes/userRoutes')
+const fluxoDeCaixaRoutes = require ('./routes/fluxoDeCaixaRoutes')
+const movimentacaoRoutes = require ('./routes/movimentacaoRoutes')
+const titulosPagarRoutes = require ('./routes/titulosPagarRoutes')
+const titulosReceberRoutes = require ('./routes/titulosReceberRoutes')
 
 app.use(
     express.urlencoded({
@@ -23,6 +27,10 @@ app.use(
 app.use(express.json())
 
 app.use('/', userRoutes)
+app.use('/', fluxoDeCaixaRoutes)
+app.use('/', movimentacaoRoutes)
+app.use('/', titulosPagarRoutes)
+app.use('/', titulosReceberRoutes)
 
 conection.sync().then(() => {
     app.listen(3000)

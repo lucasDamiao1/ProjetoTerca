@@ -14,7 +14,7 @@ const Movimentacao = conection.define('Movimentacao',{
   },
 
   valor:{
-    type: DataTypes.NUMBER,
+    type: DataTypes.DOUBLE,
   },
 
   tipo_movimentacao:{

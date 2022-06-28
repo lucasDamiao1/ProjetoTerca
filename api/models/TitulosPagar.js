@@ -3,7 +3,7 @@ const {DataTypes} = require ('sequelize')
 
 const conection = require ('../banco/conection')
 
-const TitulosPagar = conection.define('Entrada',{
+const TitulosPagar = conection.define('TitulosPagar',{
   
   codigo:{
     type: DataTypes.STRING,
@@ -39,4 +39,4 @@ const TitulosPagar = conection.define('Entrada',{
 
 })
 
-module.exports = Entrada
+module.exports = TitulosPagar

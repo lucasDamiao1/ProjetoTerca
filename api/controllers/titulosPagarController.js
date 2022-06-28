@@ -1,9 +1,9 @@
-const database = require('../models/TituloPagar')
+const database = require('../models/TitulosPagar')
 
 class TituloPagarController {
     static async pegaTodosTituloPagar(req, res){
         try {        
-                const todosTituloPagar = await database.TituloPagar.findAll()
+                const todosTituloPagar = await database.findAll()
                 return res.status(200).json(todosTituloPagar)
             
         } catch(error){

@@ -3,7 +3,7 @@ const {DataTypes} = require ('sequelize')
 
 const conection = require ('../banco/conection')
 
-const FluxoDeCaixa = conection.define('Estoque',{
+const FluxoDeCaixa = conection.define('FluxoDeCaixa',{
   
   data:{
     type: DataTypes.DATE,
@@ -14,12 +14,12 @@ const FluxoDeCaixa = conection.define('Estoque',{
   },
 
   credito:{
-    type: DataTypes.BOOLEAN,
+    type: DataTypes.DOUBLE,
   },
 
   debito:{
-    type: DataTypes.BOOLEAN,
+    type: DataTypes.DOUBLE,
   },
 })
 
-module.exports = Estoque
+module.exports = FluxoDeCaixa

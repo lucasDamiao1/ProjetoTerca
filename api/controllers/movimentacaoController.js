@@ -3,7 +3,7 @@ const database = require('../models/Movimentacao')
 class MovimentacaoController {
     static async pegaTodosMovimentacao(req, res){
         try {        
-                const todosMovimentacao = await database.Movimentacao.findAll()
+                const todosMovimentacao = await database.findAll()
                 return res.status(200).json(todosMovimentacao)
             
         } catch(error){
