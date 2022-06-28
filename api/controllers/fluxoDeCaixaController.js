@@ -53,8 +53,8 @@ class FluxoDeCaixaController {
         const { id } = req.params
         const novasInfo = req.body
         try {
-            await database.FluxoDeCaixa.update(novasInfo,  {where: { id:Number(id)}})
-            const FluxoDeCaixaAtualizado = await database.FluxoDeCaixa.findOne(
+            await database.update(novasInfo,  {where: { id:Number(id)}})
+            const FluxoDeCaixaAtualizado = await database.findOne(
                 {where: { id:Number(id)}}
             )
             return res.status(200).json(FluxoDeCaixaAtualizado)
@@ -66,7 +66,7 @@ class FluxoDeCaixaController {
     static async apagaFluxoDeCaixa(req, res){
         const { id } = req.params
         try {
-            await database.FluxoDeCaixa.destroy( {where: { id:Number(id)}} )
+            await database.destroy( {where: { id:Number(id)}} )
             return res.status(200).json({ mensgem:`id ${id} deletado` })
         } catch (error) {
             return res.status(500).json(error.message)

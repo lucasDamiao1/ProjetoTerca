@@ -55,8 +55,8 @@ class MovimentacaoController {
         const { id } = req.params
         const novasInfo = req.body
         try {
-            await database.Movimentacao.update(novasInfo,  {where: { id:Number(id)}})
-            const MovimentacaoAtualizado = await database.Movimentacao.findOne(
+            await database.update(novasInfo,  {where: { id:Number(id)}})
+            const MovimentacaoAtualizado = await database.findOne(
                 {where: { id:Number(id)}}
             )
             return res.status(200).json(MovimentacaoAtualizado)
@@ -68,7 +68,7 @@ class MovimentacaoController {
     static async apagaMovimentacao(req, res){
         const { id } = req.params
         try {
-            await database.Movimentacao.destroy( {where: { id:Number(id)}} )
+            await database.destroy( {where: { id:Number(id)}} )
             return res.status(200).json({ mensgem:`id ${id} deletado` })
         } catch (error) {
             return res.status(500).json(error.message)
